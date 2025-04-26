@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); } /* 👈 critical for seamless loop */
+  }
+  
+  .animate-marquee {
+    display: flex;
+    animation: marquee 10s linear infinite;
+  }
+  
+  .text-gold-gradient {
+  background: linear-gradient(90deg, #f9d423 0%, #ff4e50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold-gradient {
+  border-image: linear-gradient(90deg, #f9d423, #ff4e50) 1;
+}
