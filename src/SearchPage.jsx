@@ -21,7 +21,7 @@ function SearchPage() {
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
-        const res = await fetch('http:////veritas-backend-production.up.railway.app/api/featured-stocks');
+        const res = await fetch('https:////veritas-backend-production.up.railway.app/api/featured-stocks');
         const data = await res.json();
         setFeaturedStocks(data);
       } catch (err) {
