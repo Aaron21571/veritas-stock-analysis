@@ -28,10 +28,9 @@ function StockDetail() {
     const fetchData = async () => {
       try {
         const [recRes, chartRes] = await Promise.all([
-          fetch(`http://localhost:5050/api/recommend/${ticker}`),
-          fetch(`http://localhost:5050/api/chart/${ticker}`),
+          fetch(`https://veritas-backend-production.up.railway.app/api/recommend/${ticker}`),
+          fetch(`https://veritas-backend-production.up.railway.app/api/chart/${ticker}`)
         ]);
-
         const recData = await recRes.json();
         const chartRaw = await chartRes.json();
 

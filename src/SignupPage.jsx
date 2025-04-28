@@ -11,7 +11,7 @@ function SignupPage() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5050/api/signup', {
+      const response = await fetch('http:////veritas-backend-production.up.railway.app/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

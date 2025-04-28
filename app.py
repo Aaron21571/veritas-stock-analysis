@@ -28,7 +28,12 @@ with app.app_context():
     db.create_all()
 
 # --- Load trained LSTM model ---
-model = tf.keras.models.load_model("lstm_stock_model.h5")
+model = tf.keras.models.load_model(
+    'lstm_stock_model.keras',
+    compile=False,
+    custom_objects={"LSTM": tf.keras.layers.LSTM}
+)
+
 
 # Add technical indicators
 def add_indicators(df):
@@ -230,4 +235,4 @@ def get_featured_stocks():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5050)
+    app.run(host='0.0.0.0', port=5000)

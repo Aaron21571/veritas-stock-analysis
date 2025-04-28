@@ -6,7 +6,7 @@ function StockTicker() {
   useEffect(() => {
     const fetchStockPrices = async () => {
       try {
-        const res = await fetch('http://localhost:5050/api/ticker-prices');
+        const res = await fetch('http:////veritas-backend-production.up.railway.app/api/ticker-prices');
         const data = await res.json();
         setStocks(data);
       } catch (err) {
